@@ -1,7 +1,29 @@
 package hexlet.code;
 
+
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        pickAGame();
+    }
+
+    public static void pickAGame() {
+        System.out.println("Please enter the game number and press Enter");
+        System.out.println("1 - Greet\n0 - Exit");
+        Scanner sc = new Scanner(System.in);
+        int pick = sc.nextInt();
+        var userName = new Cli();
+
+        switch (pick) {
+            case 1:
+                System.out.println("Your choice: " + pick + "\n");
+                userName.greetUser();
+                break;
+            case 0:
+                break;
+            default:
+                break;
+        }
     }
 }
