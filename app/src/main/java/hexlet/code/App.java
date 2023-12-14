@@ -14,14 +14,15 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int pick = sc.nextInt();
         var userName = new Cli();
+        EvenOdd game = new EvenOdd();
 
         switch (pick) {
             case 1:
                 System.out.println("Your choice: " + pick + "\n");
-                userName.greetUser();
+                String name = userName.greetUser();
+                game.checkEvenOdd(name);
                 break;
             case 0:
-                break;
             default:
                 break;
         }
