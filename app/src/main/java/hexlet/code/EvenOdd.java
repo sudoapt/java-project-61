@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 public class EvenOdd {
     public void checkEvenOdd(String name) {
-        boolean isEven;
         Scanner sc = new Scanner(System.in);
         int answersGiven = 0;
 
@@ -13,22 +12,33 @@ public class EvenOdd {
         while (answersGiven < 3) {
             Random random = new Random();
             int rnd = random.nextInt(100) + 1;
-            isEven = rnd % 2 == 0;
+            String evenOrOdd = isEven(rnd);
 
             System.out.println("Question: " + rnd);
             String answer = sc.nextLine();
             System.out.println("Your answer is: " + answer);
-            if ((isEven && answer.equals("yes") || (!isEven && answer.equals("no")))) {
+
+            if ((evenOrOdd.equals(answer))) {
                 System.out.println("Correct");
+                ++answersGiven;
+
+                if (answersGiven == 2) {
+                    System.out.println("Congrats, " + name + "!");
+                }
+
             } else {
-                System.out.println(answer + " is a wrong answer ;(. The correct answer was 'no'.");
+                System.out.println(answer + " is a wrong answer ;(. The correct answer was " + evenOrOdd + ".");
                 System.out.println("Let's try again, " + name);
+                break;
             }
-            ++answersGiven;
         }
-        System.out.println("Congats, " + name + "!");
+    }
 
-//        check
-
+    public String isEven(int randNum) {
+        if (randNum % 2 == 0) {
+            return "yes";
+        } else {
+            return "no";
+        }
     }
 }
