@@ -1,6 +1,9 @@
 package hexlet.code;
 
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.EvenOdd;
+
 import java.util.Scanner;
 
 public class App {
@@ -15,6 +18,7 @@ public class App {
         int pick = sc.nextInt();
         var userName = new Cli();
         EvenOdd game = new EvenOdd();
+        Calc calc = new Calc();
 
         switch (pick) {
             case 1:
@@ -26,6 +30,9 @@ public class App {
                 String name = userName.greetUser();
                 game.checkEvenOdd(name);
                 break;
+            case 3:
+                System.out.println("What is the result of the expression?");
+                System.out.println("Question: " + calc.randOperation());
             case 0:
             default:
                 break;
