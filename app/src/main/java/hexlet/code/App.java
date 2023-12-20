@@ -1,9 +1,6 @@
 package hexlet.code;
 
-
-import hexlet.code.games.Calc;
-import hexlet.code.games.EvenOdd;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class App {

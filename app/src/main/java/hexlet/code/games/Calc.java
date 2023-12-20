@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Calc {
     Scanner sc = new Scanner(System.in);
@@ -36,10 +37,10 @@ public class Calc {
         while (answersGiven < 3) {
             int result = randOperation();
             int answer = sc.nextInt();
-            System.out.println("Your answer: " + answer); // engine
+            System.out.println("Your answer is: " + answer);
             if (result == answer) {
                 System.out.println("Correct");
-                ++answersGiven; // engine
+                ++answersGiven;
 
                 if (answersGiven == 3) {
                     System.out.println("Congrats, " + name + "!");

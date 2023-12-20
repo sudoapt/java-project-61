@@ -16,7 +16,7 @@ public class EvenOdd {
 
             System.out.println("Question: " + rnd);
             String answer = sc.nextLine();
-            System.out.println("Your answer is: " + answer);
+            System.out.println("Your answer is: " + answer); // engine if any answer is toString
 
             if ((evenOrOdd.equals(answer))) {
                 System.out.println("Correct");
