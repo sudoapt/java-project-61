@@ -32,7 +32,8 @@ public class App {
                 break;
             case 3:
                 System.out.println("What is the result of the expression?");
-                System.out.println("Question: " + calc.randOperation());
+                calc.checkAnswer(name);
+//                System.out.println("Question: " + );
 
 
             case 0:
