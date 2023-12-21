@@ -1,6 +1,8 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+//import hexlet.code.games.EvenOdd;
+
 import java.util.Scanner;
 
 public class App {
@@ -14,27 +16,26 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int pick = sc.nextInt();
         var userName = new Cli();
-        EvenOdd game = new EvenOdd();
+//        EvenOdd game = new EvenOdd();
         Calc calc = new Calc();
         String name = userName.greetUser();
 
         switch (pick) {
             case 1:
-                userName.greetUser();
                 System.out.println("Your choice: " + pick + "\n");
+//                userName.greetUser();
                 break;
-            case 2:
-                System.out.println("Your choice: " + pick + "\n");
-                game.checkEvenOdd(name);
-                break;
+//            case 2:
+//                System.out.println("Your choice: " + pick + "\n");
+//                game.checkEvenOdd(name);
+//                break;
             case 3:
                 System.out.println("What is the result of the expression?");
                 calc.checkAnswer(name);
-//                System.out.println("Question: " + );
-
-
             case 0:
+                break;
             default:
+                System.out.println("r u dumb?\n" + name);
                 break;
         }
     }

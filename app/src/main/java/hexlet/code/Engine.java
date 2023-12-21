@@ -12,17 +12,18 @@ public class Engine {
     Random random = new Random(); // ?YAGNI
     int answersGiven = 0;
 
-    public void announceWin(int answersGiven) {
+    public int announceWin(int ag) {
         if (answersGiven == 3) {
             System.out.println("Congrats, " + name + "!");
         }
+        return ag;
     }
 
-    public void announceLose () {
+    public void announceLose() {
         System.out.println("Let's try again, " + name);
     }
 
-    public int addScore(int answersGiven) {
+    public int addScore(int ag) {
         System.out.println("Correct");
         ++answersGiven;
         return answersGiven;
