@@ -1,41 +1,29 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 
 public class Engine {
     Scanner sc = new Scanner(System.in);
-    Cli cli = new Cli();
-    String name = cli.greetUser();
+//    Cli cli = new Cli();
+//    String name = cli.greetUser();
 
-    Random random = new Random(); // ?YAGNI
-    int answersGiven = 0;
+//    int answersGiven = 0;
 
-    public int announceWin(int ag) {
+    public int announceWin(int answersGiven, String userName) {
         if (answersGiven == 3) {
-            System.out.println("Congrats, " + name + "!");
+            System.out.println("Congrats, " + userName + "!");
         }
-        return ag;
+        return answersGiven;
     }
 
-    public void announceLose() {
-        System.out.println("Let's try again, " + name);
+    public void announceLose(String userName) {
+        System.out.println("Let's try again, " + userName);
     }
 
-    public int addScore(int ag) {
+    public int addScore(int answersGiven) {
         System.out.println("Correct");
         ++answersGiven;
         return answersGiven;
-    }
-    /* ?YAGNI*/
-    public void runGame() {
-
-        int answer = sc.nextInt();
-        while (answersGiven < 3) {
-
-            announceWin(answersGiven);
-        }
-
     }
 }

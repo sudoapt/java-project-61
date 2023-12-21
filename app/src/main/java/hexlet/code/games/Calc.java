@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+
 import hexlet.code.Engine;
 
 
@@ -41,20 +42,14 @@ public class Calc {
             int answer = sc.nextInt();
             System.out.println("Your answer is: " + answer);
             if (result == answer) {
-                engine.addScore(answersGiven);
-                engine.announceWin(answersGiven);
-//                System.out.println("Correct");
-//                ++answersGiven;
-
-//                if (answersGiven == 3) {
-//                    System.out.println("Congrats, " + name + "!");
-//                }
+                answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {
                 System.out.println(answer + " is a wrong answer ;(. The correct answer was " + result + ".");
-                engine.announceLose();
-//                System.out.println("Let's try again, " + name);
+                engine.announceLose(name);
                 break;
             }
         }
     }
+
+
 }
