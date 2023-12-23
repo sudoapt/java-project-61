@@ -1,8 +1,8 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
+import hexlet.code.games.Divider;
 import hexlet.code.games.EvenOdd;
-
 import java.util.Scanner;
 
 public class App {
@@ -12,7 +12,7 @@ public class App {
 
     public static void pickAGame() {
         System.out.println("Please enter the game number and press Enter");
-        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
+        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n0 - Exit");
         Scanner sc = new Scanner(System.in);
         int pick = sc.nextInt();
         var userName = new Cli();
@@ -33,6 +33,11 @@ public class App {
                 Calc calc = new Calc();
                 System.out.println("What is the result of the expression?");
                 calc.checkAnswer(name);
+            case 4:
+                Divider divider = new Divider();
+                System.out.println("Find the greatest common divider of the given nums.");
+                divider.checkAnswer(name);
+                // method
             case 0: // doesn't work
             default:
                 break;
