@@ -12,15 +12,15 @@ public class Divider {
     public void checkAnswer(String name) {
         int answersGiven = 0;
         while (answersGiven < 3) {
-            int num1 = randInt();
-            int num2 = randInt();
+            int num1 = engine.randInt();
+            int num2 = engine.randInt();
             System.out.printf("%d %d%n", num1, num2);
             int answer = sc.nextInt();
             System.out.println("Your answer is: " + answer);
             if (isGCD(answer, num1, num2)) {
                 answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {
-                System.out.println(answer + " is a wrong answer ;(. The correct answer was " + findGCD(num1, num2) + ".");
+                System.out.println(answer + " is a wrong answer ;(. The correct one was " + findGCD(num1, num2) + ".");
                 engine.announceLose(name);
                 break;
             }
@@ -39,7 +39,7 @@ public class Divider {
         int gcd = findGCD(num1, num2);
         return num == gcd;
     }
-    public int randInt() {
-        return random.nextInt(100) + 1;
-    }
+//    public int randInt() {
+//        return random.nextInt(100) + 1;
+//    }
 }

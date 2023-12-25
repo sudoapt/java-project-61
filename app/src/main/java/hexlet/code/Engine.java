@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -9,6 +10,7 @@ public class Engine {
 //    String name = cli.greetUser();
 
 //    int answersGiven = 0;
+    Random random = new Random();
 
     public int announceWin(int answersGiven, String userName) {
         if (answersGiven == 3) {
@@ -26,4 +28,8 @@ public class Engine {
         ++answersGiven;
         return answersGiven;
     }
+    public int randInt() {
+        return random.nextInt(100) + 1;
+    }
+
 }
