@@ -25,4 +25,25 @@ public class Progression {
         return progression;
     }
 
+    // method logic:
+    // takes a random int from the progression array and changes it to <..>;
+    // prints the array as a string 1 3 .. 7 9 11;
+    // prompts for userInput and compares it with the changed int;
+
+    public ArrayList<Integer> hideANumber(ArrayList<Integer> arrayList) {
+        ArrayList<Integer> newArrList = arrayList;
+        int indexToHide = random.nextInt(1) + arrayList.size();
+        newArrList.set(indexToHide, 0);
+        return newArrList;
+    }
+
+  /*  public String arrayToString (ArrayList<Integer> arrayList) {
+        String strNumber;
+        for (int num : arrayList
+             ) {
+            strNumber = Integer.toString(num);
+            return strNumber;
+        }
+    }*/
+
 }
