@@ -3,6 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,25 +26,46 @@ public class Progression {
         return progression;
     }
 
-    // method logic:
-    // takes a random int from the progression array and changes it to <..>;
-    // prints the array as a string 1 3 .. 7 9 11;
-    // prompts for userInput and compares it with the changed int;
-
-    public ArrayList<Integer> hideANumber(ArrayList<Integer> arrayList) {
-        ArrayList<Integer> newArrList = arrayList;
-        int indexToHide = random.nextInt(1) + arrayList.size();
-        newArrList.set(indexToHide, 0);
-        return newArrList;
+    public int getSumOfProgression(ArrayList<Integer> arrayList) {
+        int sumOfProgression = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            sumOfProgression += i;
+        }
+        return sumOfProgression;
     }
 
-  /*  public String arrayToString (ArrayList<Integer> arrayList) {
-        String strNumber;
-        for (int num : arrayList
-             ) {
-            strNumber = Integer.toString(num);
-            return strNumber;
+
+    public int hideANumber(ArrayList<Integer> arrayList) {
+        List<String> stringProgression = new ArrayList<>();
+        int numToHide = random.nextInt(arrayList.size());
+        for (Integer i: arrayList) {
+            stringProgression.add(i.toString());
         }
-    }*/
+        stringProgression.set(numToHide, "..");
+        System.out.println(stringProgression);
+        return numToHide;
+    }
+
+    public void checkAnswer(String name) {
+        int answersGiven = 0;
+        while (answersGiven < 3) {
+            int num = hideANumber(buildAProgression()); // FIXME: int is an index not a number
+            int answer = sc.nextInt();
+            System.out.println("Your answer is: " + answer);
+            if (answer == num) {
+                answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
+            } else {
+                System.out.println(answer + " is a wrong answer ;(. The correct one was " + num + ".");
+                engine.announceLose(name);
+                break;
+            }
+        }
+    }
+
+/*method:
+* 1. calls for the hideNumber to show a sequence
+* 2. prompts for missing int and reads the line
+* 3. checks if user input == numToHide */
+
 
 }

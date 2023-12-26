@@ -4,7 +4,6 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.Divider;
 import hexlet.code.games.EvenOdd;
 import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 
 public class App {
@@ -46,7 +45,8 @@ public class App {
                 divider.checkAnswer(name);
             case 5:
                 Progression progression = new Progression();
-                System.out.println(progression.buildAProgression());
+                System.out.println("??");
+                progression.checkAnswer(name);
             case 0: // doesn't work
             default:
                 break;
