@@ -38,12 +38,14 @@ public class Progression {
     public int hideANumber(ArrayList<Integer> arrayList) {
         List<String> stringProgression = new ArrayList<>();
         int numToHide = random.nextInt(arrayList.size());
+        // get an int by the index
+        int hidedNum = arrayList.get(numToHide);
         for (Integer i: arrayList) {
             stringProgression.add(i.toString());
         }
         stringProgression.set(numToHide, "..");
         System.out.println(stringProgression);
-        return numToHide;
+        return hidedNum;
     }
 
     public void checkAnswer(String name) {
