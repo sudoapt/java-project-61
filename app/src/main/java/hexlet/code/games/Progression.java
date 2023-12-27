@@ -26,20 +26,19 @@ public class Progression {
         return progression;
     }
 
-    public int getSumOfProgression(ArrayList<Integer> arrayList) {
+   /* public int getSumOfProgression(ArrayList<Integer> arrayList) {
         int sumOfProgression = 0;
         for (int i = 0; i < arrayList.size(); i++) {
             sumOfProgression += i;
         }
         return sumOfProgression;
-    }
+    }*/
 
 
     public int hideANumber(ArrayList<Integer> arrayList) {
         List<String> stringProgression = new ArrayList<>();
         int numToHide = random.nextInt(arrayList.size());
-        // get an int by the index
-        int hidedNum = arrayList.get(numToHide);
+        int hidedNum = arrayList.get(numToHide); // gets the actual number
         for (Integer i: arrayList) {
             stringProgression.add(i.toString());
         }
@@ -51,7 +50,7 @@ public class Progression {
     public void checkAnswer(String name) {
         int answersGiven = 0;
         while (answersGiven < 3) {
-            int num = hideANumber(buildAProgression()); // FIXME: int is an index not a number
+            int num = hideANumber(buildAProgression()); // FIXME: concats strings
             int answer = sc.nextInt();
             System.out.println("Your answer is: " + answer);
             if (answer == num) {
@@ -63,11 +62,4 @@ public class Progression {
             }
         }
     }
-
-/*method:
-* 1. calls for the hideNumber to show a sequence
-* 2. prompts for missing int and reads the line
-* 3. checks if user input == numToHide */
-
-
 }
