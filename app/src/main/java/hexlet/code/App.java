@@ -1,9 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Divider;
-import hexlet.code.games.EvenOdd;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 public class App {
@@ -19,6 +17,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         Scanner sc = new Scanner(System.in);
         int pick = sc.nextInt();
@@ -47,6 +46,10 @@ public class App {
                 Progression progression = new Progression();
                 System.out.println("??");
                 progression.checkAnswer(name);
+            case 6:
+                Prime prime = new Prime();
+                System.out.println("DA");
+                prime.checkAnswer(name);
             case 0: // doesn't work
             default:
                 break;
