@@ -12,10 +12,10 @@ public class Progression {
     Random random = new Random();
     Engine engine = new Engine();
 //    an array of ints to store a progression
-    ArrayList<Integer> progression = new ArrayList<>();
 
 
     public ArrayList<Integer> buildAProgression() {
+        ArrayList<Integer> progression = new ArrayList<>();
         int num = engine.randInt();
         int length = random.nextInt(6) + 5;
         for (int i = 0; i < length; i++) {
