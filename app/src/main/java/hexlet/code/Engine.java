@@ -5,10 +5,9 @@ import java.util.Scanner;
 
 
 public class Engine {
-    Scanner sc = new Scanner(System.in);
+//    Scanner sc = new Scanner(System.in);
 //    Cli cli = new Cli();
 //    String name = cli.greetUser();
-
 //    int answersGiven = 0;
     Random random = new Random();
 
