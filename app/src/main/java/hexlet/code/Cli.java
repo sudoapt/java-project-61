@@ -5,17 +5,24 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Cli {
-    public String greetUser() {
+    private String name;
+    public void greetUser() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May i have your name?");
 
         Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
+        this.name = sc.nextLine();
 
-        System.out.println("Hello, " + name + "!");
+        System.out.println("Hello, " + this.name + "!");
+    }
+
+    public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public void pickAGame(String name) {
         System.out.println("Please enter the game number and press Enter");
@@ -30,11 +37,10 @@ public class Cli {
         Scanner sc = new Scanner(System.in);
         int pick = sc.nextInt();
 
-//        String name = greetUser();
-
         switch (pick) {
             case 1:
                 System.out.println("Your choice: " + pick + "\n");
+                greetUser();
                 break;
             case 2:
                 EvenOdd game = new EvenOdd();
@@ -61,7 +67,7 @@ public class Cli {
                 System.out.println("DA");
                 prime.checkAnswer(name);
                 break;
-            case 0: // doesn't work
+            case 0:
             default:
                 break;
         }

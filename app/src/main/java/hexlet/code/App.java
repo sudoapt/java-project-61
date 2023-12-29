@@ -7,8 +7,7 @@ import hexlet.code.games.*;
 public class App {
     public static void main(String[] args) {
         Cli cli = new Cli();
-//        String name = cli.greetUser();
-        cli.pickAGame(cli.greetUser());
+        cli.pickAGame(cli.getName());
     }
 
 
