@@ -44,28 +44,33 @@ public class Cli {
                 break;
             case 2:
                 EvenOdd game = new EvenOdd();
+                greetUser();
                 System.out.println("Your choice: " + pick + "\n");
-                game.checkEvenOdd(name);
+                game.checkEvenOdd(getName());
                 break;
             case 3:
                 Calc calc = new Calc();
+                greetUser();
                 System.out.println("What is the result of the expression?");
-                calc.checkAnswer(name);
+                calc.checkAnswer(getName());
                 break;
             case 4:
                 Divider divider = new Divider();
+                greetUser();
                 System.out.println("Find the greatest common divider of the given nums.");
-                divider.checkAnswer(name);
+                divider.checkAnswer(getName());
                 break;
             case 5:
                 Progression progression = new Progression();
+                greetUser();
                 System.out.println("??");
-                progression.checkAnswer(name);
+                progression.checkAnswer(getName());
                 break;
             case 6:
                 Prime prime = new Prime();
+                greetUser();
                 System.out.println("DA");
-                prime.checkAnswer(name);
+                prime.checkAnswer(getName());
                 break;
             case 0:
             default:
