@@ -55,24 +55,28 @@ public class Cli {
             case 3:
                 Calc calc = new Calc();
                 greetUser();
+                System.out.println("Your choice: " + pick + "\n");
                 System.out.println("What is the result of the expression?");
                 calc.checkAnswer(getName());
                 break;
             case 4:
                 Divider divider = new Divider();
                 greetUser();
+                System.out.println("Your choice: " + pick + "\n");
                 System.out.println("Find the greatest common divider of the given nums.");
                 divider.checkAnswer(getName());
                 break;
             case 5:
                 Progression progression = new Progression();
                 greetUser();
+                System.out.println("Your choice: " + pick + "\n");
                 System.out.println("What number is missing in the progression?");
                 progression.checkAnswer(getName());
                 break;
             case 6:
                 Prime prime = new Prime();
                 greetUser();
+                System.out.println("Your choice: " + pick + "\n");
                 System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 prime.checkAnswer(getName());
                 break;

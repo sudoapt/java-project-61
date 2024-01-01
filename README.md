@@ -44,4 +44,4 @@ make update
 
 ---
 ### MindGames project asciinema demo
-Hit the link to see the demo -- https://asciinema.org/a/qVkRAjY3760NqnnUwY6FeaYhm
+Hit the link to see the demo -- https://asciinema.org/a/nx926Cb0TTRZ4nr1yeZPrTHQH
