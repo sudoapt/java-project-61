@@ -15,8 +15,9 @@ public class Divider {
             int num1 = engine.randInt();
             int num2 = engine.randInt();
             System.out.printf("%d %d%n", num1, num2);
+            System.out.print("Your answer is: ");
             int answer = sc.nextInt();
-            System.out.println("Your answer is: " + answer);
+            System.out.println(answer);
             if (isGCD(answer, num1, num2)) {
                 answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {
@@ -39,7 +40,4 @@ public class Divider {
         int gcd = findGCD(num1, num2);
         return num == gcd;
     }
-//    public int randInt() {
-//        return random.nextInt(100) + 1;
-//    }
 }

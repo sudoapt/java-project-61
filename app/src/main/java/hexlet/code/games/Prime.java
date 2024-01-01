@@ -12,17 +12,17 @@ public class Prime {
 
 
     public void checkAnswer(String name) {
-        int answesGiven = 0;
-//        System.out.println("Answer 'yes' if the number is prime, otherwise answer 'no'.");
-        while (answesGiven < 3) {
+        int answersGiven = 0;
+        while (answersGiven < 3) {
             int randNum = random.nextInt(10) + 1;
             String isPrime = isPrime(randNum);
             System.out.println("Question: " + randNum);
+            System.out.print("Your answer is: ");
             String answer = sc.nextLine();
-            System.out.println("Your answer is: " + answer);
+            System.out.println(answer);
 
             if (isPrime.equals(answer)) {
-                answesGiven = engine.announceWin(engine.addScore(answesGiven), name);
+                answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {
                 System.out.println(answer + " is a wrong answer ;(. The correct answer was " + isPrime + ".");
                 engine.announceLose(name);

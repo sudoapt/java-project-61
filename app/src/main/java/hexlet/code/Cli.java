@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Divider;
+import hexlet.code.games.EvenOdd;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -24,7 +28,7 @@ public class Cli {
         this.name = name;
     }
 
-    public void pickAGame(String name) {
+    public void pickAGame(String userName) {
         System.out.println("Please enter the game number and press Enter");
         System.out.println("""
                 1 - Greet
@@ -69,7 +73,7 @@ public class Cli {
             case 6:
                 Prime prime = new Prime();
                 greetUser();
-                System.out.println("DA");
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 prime.checkAnswer(getName());
                 break;
             case 0:

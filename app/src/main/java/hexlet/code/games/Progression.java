@@ -11,7 +11,6 @@ public class Progression {
     Scanner sc = new Scanner(System.in);
     Random random = new Random();
     Engine engine = new Engine();
-//    an array of ints to store a progression
 
 
     public ArrayList<Integer> buildAProgression() {
@@ -25,14 +24,6 @@ public class Progression {
         }
         return progression;
     }
-
-   /* public int getSumOfProgression(ArrayList<Integer> arrayList) {
-        int sumOfProgression = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            sumOfProgression += i;
-        }
-        return sumOfProgression;
-    }*/
 
 
     public int hideANumber(ArrayList<Integer> arrayList) {
@@ -51,8 +42,9 @@ public class Progression {
         int answersGiven = 0;
         while (answersGiven < 3) {
             int num = hideANumber(buildAProgression()); // FIXME: concats strings
+            System.out.print("Your answer is: ");
             int answer = sc.nextInt();
-            System.out.println("Your answer is: " + answer);
+            System.out.println(answer);
             if (answer == num) {
                 answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {

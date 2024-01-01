@@ -39,8 +39,9 @@ public class Calc {
         int answersGiven = 0;
         while (answersGiven < 3) {
             int result = randOperation();
+            System.out.print("Your answer is: ");
             int answer = sc.nextInt();
-            System.out.println("Your answer is: " + answer);
+            System.out.println(answer);
             if (result == answer) {
                 answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
             } else {
