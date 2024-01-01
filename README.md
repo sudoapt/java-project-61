@@ -41,3 +41,7 @@ make lint
 ```bash
 make update
 ```
+
+## MindGames asciinema demo
+
+1. Greet -- https://asciinema.org/connect/3bc2c491-c084-4cff-81fd-74b233356f6f
