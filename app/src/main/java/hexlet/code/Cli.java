@@ -67,7 +67,7 @@ public class Cli {
             case 5:
                 Progression progression = new Progression();
                 greetUser();
-                System.out.println("??");
+                System.out.println("What number is missing in the progression?");
                 progression.checkAnswer(getName());
                 break;
             case 6:

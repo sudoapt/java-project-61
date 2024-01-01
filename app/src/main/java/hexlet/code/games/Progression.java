@@ -2,11 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Progression {
     Scanner sc = new Scanner(System.in);
     Random random = new Random();
@@ -34,14 +33,17 @@ public class Progression {
             stringProgression.add(i.toString());
         }
         stringProgression.set(numToHide, "..");
-        System.out.println(stringProgression);
+        String stringProgressionToPrint = stringProgression.toString().replace("[", "")
+                .replace("]", "")
+                .replace(", ", " ");
+        System.out.println(stringProgressionToPrint);
         return hidedNum;
     }
 
     public void checkAnswer(String name) {
         int answersGiven = 0;
         while (answersGiven < 3) {
-            int num = hideANumber(buildAProgression()); // FIXME: concats strings
+            int num = hideANumber(buildAProgression());
             System.out.print("Your answer is: ");
             int answer = sc.nextInt();
             System.out.println(answer);
