@@ -14,4 +14,4 @@ make run-dist
 
 ---
 ### MindGames project asciinema demo
-Hit the link to see the demo -- https://asciinema.org/a/nx926Cb0TTRZ4nr1yeZPrTHQH
+Hit the link to see the demo -- https://asciinema.org/a/MyMxFH7NsIFaWZgfKArjJfZ2P
