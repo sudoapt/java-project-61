@@ -109,7 +109,7 @@ public class Engine {
         System.out.println(Prime.gameRule());
         int answersGiven = 0;
         while (answersGiven < 3) {
-            int rnd = Engine.randInt(10);
+            int rnd = Engine.randInt(100);
             Scanner sc = new Scanner(System.in);
             System.out.println("Question: " + rnd);
             System.out.print("Your answer is: ");
