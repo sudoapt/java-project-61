@@ -1,59 +1,43 @@
 package hexlet.code.games;
-
-import hexlet.code.Engine;
-
-import java.util.Random;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
+
 public class Progression {
-    Scanner sc = new Scanner(System.in);
-    Random random = new Random();
-    Engine engine = new Engine();
-
-
-    public ArrayList<Integer> buildAProgression() {
+    public static String gameRule() {
+        return "What number is missing in the progression?";
+    }
+    public static ArrayList<Integer> buildAProgression(int bound, int length) {
         ArrayList<Integer> progression = new ArrayList<>();
-        int num = engine.randInt();
-        int length = random.nextInt(6) + 5;
         for (int i = 0; i < length; i++) {
-            progression.add(num + (i * 2));
-            /* 1) 5 + (1 * 2) = 7
-            2) 5 + (2*2) = 9 */
+            progression.add(bound + (i * 2));
+            /* 1) bound + (1*2) = 7
+            2) bound + (2*2) = 9 */
         }
         return progression;
     }
 
-
-    public int hideANumber(ArrayList<Integer> arrayList) {
-        List<String> stringProgression = new ArrayList<>();
-        int numToHide = random.nextInt(arrayList.size());
-        int hidedNum = arrayList.get(numToHide); // gets the actual number
-        for (Integer i: arrayList) {
-            stringProgression.add(i.toString());
-        }
-        stringProgression.set(numToHide, "..");
-        String stringProgressionToPrint = stringProgression.toString().replace("[", "")
-                .replace("]", "")
-                .replace(", ", " ");
-        System.out.println(stringProgressionToPrint);
-        return hidedNum;
+    public static int pickIndexToReplace(ArrayList<Integer> progression) {
+        Random random = new Random();
+        return random.nextInt(progression.size()); // an index if an int ot hide
     }
 
-    public void checkAnswer(String name) {
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int num = hideANumber(buildAProgression());
-            System.out.print("Your answer is: ");
-            int answer = sc.nextInt();
-            System.out.println(answer);
-            if (answer == num) {
-                answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
+    public static int getHidedNumber(ArrayList<Integer> progression, int index) {
+        return progression.get(index); // returns the actual int
+    }
+
+    public static String toString(ArrayList<Integer> progression, int indexToHide) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < progression.size(); i++) {
+            if (i == indexToHide) {
+                sb.append("..");
             } else {
-                System.out.println(answer + " is a wrong answer ;(. The correct one was " + num + ".");
-                engine.announceLose(name);
-                break;
+                sb.append(" ").append(progression.get(i)).append(" ");
             }
         }
+        return sb.toString().trim();
+    }
+
+    public static boolean checkAnswer(int userAnswer, int hidedNumber) {
+        return userAnswer == hidedNumber;
     }
 }

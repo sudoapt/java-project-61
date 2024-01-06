@@ -1,56 +1,52 @@
 package hexlet.code.games;
 
-import java.util.Random;
-import java.util.Scanner;
-
-import hexlet.code.Engine;
-
-
 public class Calc {
-    Engine engine = new Engine();
-    Scanner sc = new Scanner(System.in);
-    Random random = new Random();
-
-    public int randOperation() {
+    public static String gameRule() {
+        return "What is the result of the expression?";
+    }
+    public static int randOperation(int num1, int num2, int operation) {
         int result = 0;
-        int num1 = random.nextInt(10) + 1;
-        int num2 = random.nextInt(10) + 1;
-        int operation = random.nextInt(3) + 1;
         switch (operation) {
-            case 1 -> {
-                System.out.println("Question: " + num1 + " + " + num2);
-                result = num1 + num2;
-            }
-            case 2 -> {
-                System.out.println("Question: " + num1 + " - " + num2);
-                result = num1 - num2;
-            }
-            case 3 -> {
-                System.out.println("Question: " + num1 + " * " + num2);
-                result = num1 * num2;
-            }
-            default -> {
-            }
-        }
-        return result;
-    }
-
-    public void checkAnswer(String name) {
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int result = randOperation();
-            System.out.print("Your answer is: ");
-            int answer = sc.nextInt();
-            System.out.println(answer);
-            if (result == answer) {
-                answersGiven = engine.announceWin(engine.addScore(answersGiven), name);
-            } else {
-                System.out.println(answer + " is a wrong answer ;(. The correct answer was " + result + ".");
-                engine.announceLose(name);
-                break;
-            }
+            case 1:
+                result = randSum(num1, num2);
+                return result;
+            case 2:
+                result = randDiff(num1, num2);
+                return result;
+            case 3:
+                result = randProd(num1, num2);
+                return result;
+            default:
+                return result;
         }
     }
 
+    public static String randOperator(int operation) {
+        String operator = "";
+        switch (operation) {
+            case 1:
+                return "+";
+            case 2:
+                return "-";
+            case 3:
+                return "*";
+            default:
+                return operator;
+        }
+    }
+    public static int randSum(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    public static int randDiff(int num1, int num2) {
+        return num1 - num2;
+    }
+    public static int randProd(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public static boolean checkAnswer(int rightResult, int userAnswer) {
+        return rightResult == userAnswer;
+    }
 
 }

@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
-
 import java.util.Scanner;
 
 public class App {
@@ -28,41 +26,29 @@ public class App {
                 break;
             case 2:
                 System.out.println("Your choice: " + pick + "\n");
-                Engine.runGame();
+                Engine.runEvenOddGame();
                 //
                 break;
-          /*  case 3:
-                Calc calc = new Calc();
-                greetUser();
+            case 3:
                 System.out.println("Your choice: " + pick + "\n");
-                System.out.println("What is the result of the expression?");
-                calc.checkAnswer(getName());
+                Engine.runCalcGame();
                 break;
             case 4:
-                Divider divider = new Divider();
-                greetUser();
                 System.out.println("Your choice: " + pick + "\n");
-                System.out.println("Find the greatest common divider of the given nums.");
-                divider.checkAnswer(getName());
+                Engine.runGCDGame();
                 break;
             case 5:
-                Progression progression = new Progression();
-                greetUser();
+
                 System.out.println("Your choice: " + pick + "\n");
-                System.out.println("What number is missing in the progression?");
-                progression.checkAnswer(getName());
+                Engine.runProgressionGame();
                 break;
             case 6:
-                Prime prime = new Prime();
-                greetUser();
                 System.out.println("Your choice: " + pick + "\n");
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-                prime.checkAnswer(getName());
-                break;*/
+                Engine.runPrimeGame();
+                break;
             case 0:
             default:
                 break;
         }
     }
-
 }
