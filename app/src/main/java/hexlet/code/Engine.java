@@ -1,128 +1,142 @@
 package hexlet.code;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Divider;
-import hexlet.code.games.EvenOdd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS_AMOUNT = 3;
+    public static int roundsWon = 0;
 
-    public static void runEvenOddGame() {
+    public static void runGame(String rules,  String question, String correctAnswer) {
         String userName = Engine.getUserName();
-        System.out.println(EvenOdd.gameRule());
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int rnd = Engine.randInt(100);
+        System.out.println(rules);
+        while (roundsWon < ROUNDS_AMOUNT) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Question: " + rnd);
+            System.out.println("Question: " + question);
             System.out.print("Your answer is: ");
             String userAnswer = sc.nextLine();
-            if (EvenOdd.checkEvenOdd(userAnswer, rnd)) {
-                answersGiven = Engine.addScore(answersGiven);
+            if (userAnswer.equals(correctAnswer)){
+                roundsWon = Engine.addScore(roundsWon);
             } else {
-                Engine.announceLose(userName, userAnswer, EvenOdd.returnRightAnswer(rnd));
+                Engine.announceLose(userName, userAnswer, correctAnswer);
                 break;
             }
-            Engine.announceWin(answersGiven, userName);
+            Engine.announceWin(roundsWon, userName);
         }
     }
 
-    public static void runCalcGame() {
-        String userName = Engine.getUserName();
-        System.out.println(Calc.gameRule());
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int rnd1 = Engine.randInt(10);
-            int rnd2 = Engine.randInt(10);
-            int operation = Engine.randInt(3);
-            int result = Calc.randOperation(rnd1, rnd2, operation);
-            System.out.println("Question: " + rnd1
-                    + " " + Calc.randOperator(operation) + " " + rnd2);
-            System.out.print("Your answer is: ");
-            Scanner sc = new Scanner(System.in);
-            int userAnswer = sc.nextInt();
-            if (Calc.checkAnswer(result, userAnswer)) {
-                answersGiven = Engine.addScore(answersGiven);
-            } else {
-                Engine.announceLose(userName, Integer.toString(userAnswer),
-                        Integer.toString(result));
-                break;
-            }
-            Engine.announceWin(answersGiven, userName);
-        }
-    }
+//    public static void runEvenOddGame() {
+//        String userName = Engine.getUserName();
+//        System.out.println(EvenOdd.gameRule());
+//        int answersGiven = 0;
+//        while (answersGiven < 3) {
+//            int rnd = Engine.randInt(100);
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Question: " + rnd);
+//            System.out.print("Your answer is: ");
+//            String userAnswer = sc.nextLine();
+//            if (EvenOdd.checkEvenOdd(userAnswer, rnd)) {
+//                answersGiven = Engine.addScore(answersGiven);
+//            } else {
+//                Engine.announceLose(userName, userAnswer, EvenOdd.returnRightAnswer(rnd));
+//                break;
+//            }
+//            Engine.announceWin(answersGiven, userName);
+//        }
+//    }
 
-    public static void runGCDGame() {
-        String userName = Engine.getUserName();
-        System.out.println(Divider.gameRule());
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int num1 = Engine.randInt(100);
-            int num2 = Engine.randInt(100);
-            int result = Divider.findGCD(num1, num2);
-            System.out.printf("Question: %d %d%n", num1, num2);
-            System.out.print("Your answer is: ");
-            Scanner sc = new Scanner(System.in);
-            int userAnswer = sc.nextInt();
-            if (Divider.checkAnswer(userAnswer, num1, num2)) {
-                answersGiven = Engine.addScore(answersGiven);
-            } else {
-                Engine.announceLose(userName, Integer.toString(userAnswer),
-                        Integer.toString(result));
-                break;
-            }
-            Engine.announceWin(answersGiven, userName);
-        }
-    }
+//    public static void runCalcGame() {
+//        String userName = Engine.getUserName();
+//        System.out.println(Calc.gameRule());
+//        int answersGiven = 0;
+//        while (answersGiven < 3) {
+//            int rnd1 = Engine.randInt(10);
+//            int rnd2 = Engine.randInt(10);
+//            int operation = Engine.randInt(3);
+//            int result = Calc.randOperation(rnd1, rnd2, operation);
+//            System.out.println("Question: " + rnd1
+//                    + " " + Calc.randOperator(operation) + " " + rnd2);
+//            System.out.print("Your answer is: ");
+//            Scanner sc = new Scanner(System.in);
+//            int userAnswer = sc.nextInt();
+//            if (Calc.checkAnswer(result, userAnswer)) {
+//                answersGiven = Engine.addScore(answersGiven);
+//            } else {
+//                Engine.announceLose(userName, Integer.toString(userAnswer),
+//                        Integer.toString(result));
+//                break;
+//            }
+//            Engine.announceWin(answersGiven, userName);
+//        }
+//    }
 
-    public static void runProgressionGame() {
-        String userName = Engine.getUserName();
-        System.out.println(Progression.gameRule());
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int bound = Engine.randInt(100);
-            int length = Engine.randInt(6) + 5;
-            ArrayList<Integer> progression = Progression.buildAProgression(bound, length);
-            int indexToHide = Progression.pickIndexToReplace(progression);
-            int hidedNumber = Progression.getHidedNumber(progression, indexToHide);
-            System.out.println(Progression.toString(progression, indexToHide));
-            System.out.print("Your answer is: ");
-            Scanner sc = new Scanner(System.in);
-            int userAnswer = sc.nextInt();
-            if (Progression.checkAnswer(userAnswer, hidedNumber)) {
-                answersGiven = Engine.addScore(answersGiven);
-            } else {
-                Engine.announceLose(userName, Integer.toString(userAnswer),
-                        Integer.toString(hidedNumber));
-                break;
-            }
-            Engine.announceWin(answersGiven, userName);
-        }
-    }
+//    public static void runGCDGame() {
+//        String userName = Engine.getUserName();
+//        System.out.println(Divider.gameRule());
+//        int answersGiven = 0;
+//        while (answersGiven < 3) {
+//            int num1 = Engine.randInt(100);
+//            int num2 = Engine.randInt(100);
+//            int result = Divider.findGCD(num1, num2);
+//            System.out.printf("Question: %d %d%n", num1, num2);
+//            System.out.print("Your answer is: ");
+//            Scanner sc = new Scanner(System.in);
+//            int userAnswer = sc.nextInt();
+//            if (Divider.checkAnswer(userAnswer, num1, num2)) {
+//                answersGiven = Engine.addScore(answersGiven);
+//            } else {
+//                Engine.announceLose(userName, Integer.toString(userAnswer),
+//                        Integer.toString(result));
+//                break;
+//            }
+//            Engine.announceWin(answersGiven, userName);
+//        }
+//    }
 
-    public static void runPrimeGame() {
-        String userName = Engine.getUserName();
-        System.out.println(Prime.gameRule());
-        int answersGiven = 0;
-        while (answersGiven < 3) {
-            int rnd = Engine.randInt(100);
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Question: " + rnd);
-            System.out.print("Your answer is: ");
-            String userAnswer = sc.nextLine();
-            if (Prime.checkAnswer(userAnswer, rnd)) {
-                answersGiven = Engine.addScore(answersGiven);
-            } else {
-                Engine.announceLose(userName, userAnswer, Prime.isPrime(rnd));
-                break;
-            }
-            Engine.announceWin(answersGiven, userName);
-        }
-    }
+//    public static void runProgressionGame() {
+//        String userName = Engine.getUserName();
+//        System.out.println(Progression.gameRule());
+//        int answersGiven = 0;
+//        while (answersGiven < 3) {
+//            int bound = Engine.randInt(100);
+//            int length = Engine.randInt(6) + 5;
+//            ArrayList<Integer> progression = Progression.buildAProgression(bound, length);
+//            int indexToHide = Progression.pickIndexToReplace(progression);
+//            int hidedNumber = Progression.getHidedNumber(progression, indexToHide);
+//            System.out.println(Progression.toString(progression, indexToHide));
+//            System.out.print("Your answer is: ");
+//            Scanner sc = new Scanner(System.in);
+//            int userAnswer = sc.nextInt();
+//            if (Progression.checkAnswer(userAnswer, hidedNumber)) {
+//                answersGiven = Engine.addScore(answersGiven);
+//            } else {
+//                Engine.announceLose(userName, Integer.toString(userAnswer),
+//                        Integer.toString(hidedNumber));
+//                break;
+//            }
+//            Engine.announceWin(answersGiven, userName);
+//        }
+//    }
+
+//    public static void runPrimeGame() {
+//        String userName = Engine.getUserName();
+//        System.out.println(Prime.gameRule());
+//        int answersGiven = 0;
+//        while (answersGiven < 3) {
+//            int rnd = Engine.randInt(100);
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Question: " + rnd);
+//            System.out.print("Your answer is: ");
+//            String userAnswer = sc.nextLine();
+//            if (Prime.checkAnswer(userAnswer, rnd)) {
+//                answersGiven = Engine.addScore(answersGiven);
+//            } else {
+//                Engine.announceLose(userName, userAnswer, Prime.isPrime(rnd));
+//                break;
+//            }
+//            Engine.announceWin(answersGiven, userName);
+//        }
+//    }
 
     public static String getUserName() {
         System.out.println("Welcome to the Brain Games!");
