@@ -7,7 +7,7 @@ public class Calc {
     public static String gameRule() {
         return "What is the result of the expression?";
     }
-    public static String getAnswer(String operator, int num1, int num2 ) {
+    public static String getAnswer(String operator, int num1, int num2) {
         return switch (operator) {
             case " + " -> Integer.toString(num1 + num2);
             case " - " -> Integer.toString(num1 - num2);

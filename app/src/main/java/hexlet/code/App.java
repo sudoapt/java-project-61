@@ -4,6 +4,7 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.Divider;
 import hexlet.code.games.EvenOdd;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -39,7 +40,7 @@ public class App {
                 Progression.runProgressionGame();
                 break;
             case 6:
-//                Engine.runPrimeGame();
+                Prime.runPrimeGame();
                 break;
             case 0:
             default:
