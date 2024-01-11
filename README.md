@@ -9,7 +9,7 @@ A project template with only the bare minimum of structure. A good starting poin
 ## Install
 
 ```bash
-make install:
+make install
 ```
 
 ## Run
