@@ -1,6 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Divider;
 import hexlet.code.games.EvenOdd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -27,13 +30,13 @@ public class App {
                 EvenOdd.runEvenOddGame();
                 break;
             case 3:
-//                Engine.runCalcGame();
+                Calc.runCalcGame();
                 break;
             case 4:
-//                Engine.runGCDGame();
+                Divider.runGCDGame();
                 break;
             case 5:
-//                Engine.runProgressionGame();
+                Progression.runProgressionGame();
                 break;
             case 6:
 //                Engine.runPrimeGame();
