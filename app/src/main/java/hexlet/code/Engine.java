@@ -22,7 +22,7 @@ public class Engine {
                 System.out.println("Correct");
             } else {
                 Engine.announceLose(userName, userAnswer, gameDatum[ANSWER_INDEX]);
-                break;
+                return;
             }
         }
         System.out.println("Congrats, " + userName + "!");
