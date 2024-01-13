@@ -1,5 +1,4 @@
 package hexlet.code;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
@@ -7,13 +6,16 @@ public class Engine {
     public static final int AMOUNT_OF_GAME_UNITS = 2; // q and a
     public static final int QUESTION_INDEX = 0; // [0][1]
     public static final int ANSWER_INDEX = 1; // [0][1]
-//    public static int roundsWon = 0;
 
     public static void runGame(String rules, String[][] gameData) {
-        String userName = Engine.getUserName();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May i have your name?");
+        Scanner sc = new Scanner(System.in);
+        String userName = sc.nextLine();
+        System.out.println("Hello, " + userName + "!");
+
         System.out.println(rules);
         for (String[] gameDatum : gameData) {
-            Scanner sc = new Scanner(System.in);
             System.out.println("Question: " + gameDatum[QUESTION_INDEX]);
             System.out.print("Your answer is: ");
             String userAnswer = sc.nextLine();
@@ -21,31 +23,12 @@ public class Engine {
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct");
             } else {
-                Engine.announceLose(userName, userAnswer, gameDatum[ANSWER_INDEX]);
+                System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. The correct answer was "
+                        + "'" + gameDatum[ANSWER_INDEX] + "'.");
+                System.out.println("Let's try again, " + userName);
                 return;
             }
         }
         System.out.println("Congrats, " + userName + "!");
     }
-
-    public static String getUserName() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May i have your name?");
-        Scanner sc = new Scanner(System.in);
-        String userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
-        return userName;
-    }
-
-    public static void announceLose(String userName, String userAnswer, String rightAnswer) {
-        System.out.println("'" + userAnswer + "'" + " is a wrong answer ;(. The correct answer was "
-                + "'" + rightAnswer + "'.");
-        System.out.println("Let's try again, " + userName);
-    }
-
-    public static int randInt(int bound) {
-        Random random = new Random();
-        return random.nextInt(bound) + 1;
-    }
-
 }

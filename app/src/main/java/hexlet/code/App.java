@@ -42,9 +42,8 @@ public class App {
             case 6:
                 Prime.runPrimeGame();
                 break;
-            case 0:
             default:
-                break;
+                throw new RuntimeException("Unknown input" + pick);
         }
     }
 }

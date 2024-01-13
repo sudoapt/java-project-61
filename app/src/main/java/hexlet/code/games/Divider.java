@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Divider {
     public static String gameRule() {
@@ -10,8 +11,8 @@ public class Divider {
     public static void runGCDGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
-            int num1 = Engine.randInt(100);
-            int num2 = Engine.randInt(100);
+            int num1 = Utils.randInt(100);
+            int num2 = Utils.randInt(100);
             String question = num1 + " " + num2;
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = Integer.toString(findGCD(num1, num2));
@@ -26,9 +27,5 @@ public class Divider {
             num1 = temp;
         }
         return num1;
-    }
-    public static boolean isGCD(int num, int num1, int num2) {
-        int gcd = findGCD(num1, num2);
-        return num == gcd;
     }
 }
