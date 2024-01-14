@@ -3,6 +3,10 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Progression {
+    public static final int BOUND = 100;
+    public static final int BOTTOM_NUM = 4;
+    public static final int TOP_NUM = 6;
+
     public static final String INDEX_MASK = "..";
     public static final int STEP = 2;
     public static String gameRule() {
@@ -21,8 +25,8 @@ public class Progression {
     public static void runProgressionGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
-            int startNum = Utils.randInt(100);
-            int length = Utils.randInt(4) + 6;
+            int startNum = Utils.randInt(BOUND);
+            int length = Utils.randInt(BOTTOM_NUM) + TOP_NUM;
             String[] progression = makeProgression(startNum, STEP, length);
             int indexToHide = Utils.randInt(progression.length - 1);
             String question = makeProgressionWithHiddenNum(progression, indexToHide);

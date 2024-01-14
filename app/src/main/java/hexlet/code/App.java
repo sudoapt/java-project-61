@@ -20,26 +20,26 @@ public class App {
                 6 - Prime
                 0 - Exit""");
         Scanner sc = new Scanner(System.in);
-        int pick = sc.nextInt();
+        String pick = sc.next();
         System.out.println("Your choice: " + pick + "\n");
 
         switch (pick) {
-            case 1:
+            case "1":
                 Cli.greetUser();
                 break;
-            case 2:
+            case "2":
                 EvenOdd.runEvenOddGame();
                 break;
-            case 3:
+            case "3":
                 Calc.runCalcGame();
                 break;
-            case 4:
+            case "4":
                 Divider.runGCDGame();
                 break;
-            case 5:
+            case "5":
                 Progression.runProgressionGame();
                 break;
-            case 6:
+            case "6":
                 Prime.runPrimeGame();
                 break;
             default:
