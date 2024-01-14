@@ -22,7 +22,7 @@ public class Progression {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
             int startNum = Utils.randInt(100);
-            int length = Utils.randInt(5) + 6;
+            int length = Utils.randInt(4) + 6;
             String[] progression = makeProgression(startNum, STEP, length);
             int indexToHide = Utils.randInt(progression.length);
             String question = makeProgressionWithHiddenNum(progression, indexToHide);
