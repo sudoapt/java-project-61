@@ -24,7 +24,7 @@ public class Progression {
             int startNum = Utils.randInt(100);
             int length = Utils.randInt(4) + 6;
             String[] progression = makeProgression(startNum, STEP, length);
-            int indexToHide = Utils.randInt(progression.length);
+            int indexToHide = Utils.randInt(progression.length - 1);
             String question = makeProgressionWithHiddenNum(progression, indexToHide);
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = progression[indexToHide];
