@@ -5,9 +5,8 @@ import hexlet.code.Utils;
 
 public class Divider {
     public static final int BOUND = 100;
-    public static String gameRule() {
-        return "Find the greatest common divisor of given numbers.";
-    }
+    public static final String GAMERULE = "Find the greatest common divisor of given numbers.";
+
 
     public static void runGCDGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
@@ -18,7 +17,7 @@ public class Divider {
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = Integer.toString(findGCD(num1, num2));
         }
-        Engine.runGame(gameRule(), gameData);
+        Engine.runGame(GAMERULE, gameData);
     }
 
     public static int findGCD(int num1, int num2) {

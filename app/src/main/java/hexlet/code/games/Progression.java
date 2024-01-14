@@ -9,9 +9,8 @@ public class Progression {
 
     public static final String INDEX_MASK = "..";
     public static final int STEP = 2;
-    public static String gameRule() {
-        return "What number is missing in the progression?";
-    }
+    public static final String GAMERULE ="What number is missing in the progression?";
+
 
     public static String[] makeProgression(int first, int step, int length) {
         String[] progression = new String[length];
@@ -33,7 +32,7 @@ public class Progression {
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = progression[indexToHide];
         }
-        Engine.runGame(gameRule(), gameData);
+        Engine.runGame(GAMERULE, gameData);
     }
 
     public static String makeProgressionWithHiddenNum(String[] progression, int indexToHide) {

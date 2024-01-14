@@ -6,9 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
     public static final int BOUND = 100;
     public static final String[] OPERATORS = {" + ", " - ", " * "};
-    public static String gameRule() {
-        return "What is the result of the expression?";
-    }
+    public static final String GAME_RULE = "What is the result of the expression?";
     public static String getAnswer(String operator, int num1, int num2) {
         return switch (operator) {
             case " + " -> Integer.toString(num1 + num2);
@@ -28,7 +26,7 @@ public class Calc {
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = getAnswer(operator, firstOperand, secondOperand);
         }
-        Engine.runGame(gameRule(), gameData);
+        Engine.runGame(GAME_RULE, gameData);
 
     }
 

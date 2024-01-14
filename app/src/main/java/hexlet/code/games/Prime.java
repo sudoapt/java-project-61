@@ -5,9 +5,7 @@ import hexlet.code.Utils;
 
 public class Prime {
     public static final int BOUND = 100;
-    public static String gameRule() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
+    public static final String GAMERULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void runPrimeGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
@@ -16,7 +14,7 @@ public class Prime {
             gameDatum[Engine.QUESTION_INDEX] = Integer.toString(question);
             gameDatum[Engine.ANSWER_INDEX] = isPrime(question) ? "yes" : "no";
         }
-        Engine.runGame(gameRule(), gameData);
+        Engine.runGame(GAMERULE, gameData);
 
     }
 
