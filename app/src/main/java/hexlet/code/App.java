@@ -28,19 +28,19 @@ public class App {
                 Cli.greetUser();
                 break;
             case "2":
-                EvenOdd.runEvenOddGame();
+                EvenOdd.runGame();
                 break;
             case "3":
-                Calc.runCalcGame();
+                Calc.runGame();
                 break;
             case "4":
-                Divider.runGCDGame();
+                Divider.runGame();
                 break;
             case "5":
-                Progression.runProgressionGame();
+                Progression.runGame();
                 break;
             case "6":
-                Prime.runPrimeGame();
+                Prime.runGame();
                 break;
             default:
                 throw new RuntimeException("Unknown input" + pick);

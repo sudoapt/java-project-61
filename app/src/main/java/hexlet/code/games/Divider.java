@@ -8,7 +8,7 @@ public class Divider {
     public static final String GAMERULE = "Find the greatest common divisor of given numbers.";
 
 
-    public static void runGCDGame() {
+    public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
             int num1 = Utils.randInt(BOUND);

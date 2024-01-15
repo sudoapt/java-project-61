@@ -21,23 +21,20 @@ public class Progression {
         return progression;
     }
 
-    public static void runProgressionGame() {
+    public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
             int startNum = Utils.randInt(BOUND);
             int length = Utils.randInt(BOTTOM_NUM) + TOP_NUM;
             String[] progression = makeProgression(startNum, STEP, length);
             int indexToHide = Utils.randInt(progression.length - 1);
-            String question = makeProgressionWithHiddenNum(progression, indexToHide);
+            String[] progressionWithHidedNum = progression.clone();
+            progressionWithHidedNum[indexToHide] = INDEX_MASK;
+            String question = String.join(" ", progressionWithHidedNum);
             gameDatum[Engine.QUESTION_INDEX] = question;
             gameDatum[Engine.ANSWER_INDEX] = progression[indexToHide];
         }
         Engine.runGame(GAMERULE, gameData);
     }
 
-    public static String makeProgressionWithHiddenNum(String[] progression, int indexToHide) {
-        String[] progressionWithHidedNum = progression.clone();
-        progressionWithHidedNum[indexToHide] = INDEX_MASK;
-        return String.join(" ", progressionWithHidedNum);
-    }
 }

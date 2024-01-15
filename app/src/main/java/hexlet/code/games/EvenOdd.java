@@ -7,7 +7,7 @@ public class EvenOdd {
     public static final int BOUND = 100;
     public static final String GAMERULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static void runEvenOddGame() {
+    public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (int i = 0; i < Engine.ROUNDS_AMOUNT; i++) {
             int question = Utils.randInt(BOUND); // ? is it even

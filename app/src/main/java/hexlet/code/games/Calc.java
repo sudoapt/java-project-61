@@ -12,11 +12,11 @@ public class Calc {
             case " + " -> Integer.toString(num1 + num2);
             case " - " -> Integer.toString(num1 - num2);
             case " * " -> Integer.toString(num1 * num2);
-            default -> null;
+            default -> throw new RuntimeException("Unknown input" + operator);
         };
     }
 
-    public static void runCalcGame() {
+    public static void runGame() {
         String[][] gameData = new String[Engine.ROUNDS_AMOUNT][Engine.AMOUNT_OF_GAME_UNITS];
         for (String[] gameDatum: gameData) {
             int firstOperand = Utils.randInt(BOUND);
