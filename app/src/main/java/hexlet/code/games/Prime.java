@@ -19,7 +19,10 @@ public class Prime {
     }
 
     public static boolean isPrime(int randNum) {
-        for (int i = 2; i < Math.sqrt(Math.abs(randNum)); i++) {
+        if (randNum < 1) {
+            return false;
+        }
+        for (int i = 2; i < Math.sqrt(randNum); i++) {
             if (randNum % i == 0) {
                 return false;
             }
